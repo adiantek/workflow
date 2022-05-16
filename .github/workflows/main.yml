@@ -29,12 +29,13 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
-    - uses: tauri-apps/tauri-action@v0
+    - uses: tauri-apps/tauri-action@743a37fd53cbdd122910b818b9bef7b7aa019134
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
         releaseName: "App v__VERSION__"
         releaseBody: "See the assets to download this version and install."
-        releaseDraft: false
+        releaseDraft: true
         prerelease: false
+        bundleIdentifier: 'elo'
