@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: 16
     - name: extract
-      run: tar -zcvf workflow.tar.gz
+      run: tar -zxvf workflow.tar.gz
     - name: install Rust stable
       uses: actions-rs/toolchain@v1
       with:
