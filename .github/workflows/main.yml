@@ -19,7 +19,11 @@ jobs:
       with:
         node-version: 16
     - name: extract
-      run: tar -zxvf workflow.tar.gz
+      run: |
+        mkdir dist
+        cd dist
+        tar -zxvf ../workflow.tar.gz
+        cd ..
     - name: install Rust stable
       uses: actions-rs/toolchain@v1
       with:
@@ -39,3 +43,4 @@ jobs:
         releaseDraft: true
         prerelease: false
         bundleIdentifier: 'elo'
+        distPath: 'dist'
