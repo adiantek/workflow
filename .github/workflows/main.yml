@@ -43,4 +43,3 @@ jobs:
         releaseDraft: true
         prerelease: false
         bundleIdentifier: 'elo'
-        distPath: 'dist'
